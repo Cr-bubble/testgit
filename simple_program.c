@@ -31,7 +31,6 @@ int main(int argc, char **argv) {
         fprintf(stderr, "%s: Missing options\nTry '%s -h' for help.\n", argv[0], argv[0]);
         return 1;
     }
-
     if (echo_msg != NULL)
         puts(echo_msg);
 }
