@@ -11,7 +11,8 @@ int main(int argc, char **argv) {
     // h: Help
     // e [msg]: Echo message
     // n [name]: Hi, [name]!
-    while ((c = getopt(argc, argv, "he:n:")) != -1) {
+    // p: Ping!
+    while ((c = getopt(argc, argv, "he:n:p")) != -1) {
         has_option = 1;
 
         switch (c) {
@@ -21,13 +22,17 @@ int main(int argc, char **argv) {
                 puts("\t-h: Print help message");
                 puts("\t-e [msg]: Echo message");
 		puts("\t-n [name]: Hi, [name]!");
-                return 0;
+                puts("\t-p: Ping!");
+		return 0;
             
             case 'e':
                 echo_msg = optarg;
                 break;
 	    case 'n':
 		name = optarg;
+	    	break;
+	    case 'p':
+		echo_msg = "Ping!";
 		break;
         }
     }
